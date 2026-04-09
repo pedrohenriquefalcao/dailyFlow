@@ -1,0 +1,248 @@
+.conteudo-principal {
+    margin-left: 60px; /* Respeita o tamanho da barra lateral */
+    width: calc(100% - 60px); /* Garante que preencha toda a tela restante */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* O segredo da responsividade */
+    align-items: start; /* Impede que colunas menores estiquem artificialmente */
+    gap: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.calendario-moldura, .todo-moldura, .anotacoes-moldura, .estatisticas-moldura {
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.calendario-moldura {
+    padding: 40px 20px;
+    height: max-content;
+}
+
+.calendario-moldura::before, .calendario-moldura::after {
+    content: "";
+    position: absolute;
+    top: -16px;
+    width: 24px;
+    height: 32px;
+    border: 2px solid #000000;
+    background-color: #F3F2F1;
+    border-radius: 8px;
+}
+
+.calendario-moldura::before {
+    left: 40px;
+}
+
+.calendario-moldura::after {
+    right: 40px;
+}
+
+.todo-moldura {
+    padding: 40px 20px;
+    height: max-content;
+}
+
+.anotacoes-moldura {
+    padding: 40px 20px;
+    height: max-content;
+}
+
+.estatisticas-moldura {
+    padding: 40px 30px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendario-moldura h1, .todo-moldura h1, .anotacoes-moldura h1 {
+    color: #000000;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.lista-eventos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.entrada-evento {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data {
+    color: #000000;
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    align-self: flex-start;
+}
+
+.cartao-evento {
+    background-color: #0066FF;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.cartao-evento p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
+
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.circulo-check {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #0066FF;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.texto-tarefa {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 2px solid;
+    text-align: left;
+    background-color: transparent;
+}
+
+.texto-tarefa p {
+    margin: 0;
+    color: #000000;
+    font-size: 12px;
+}
+
+.borda-vermelha { border-color: #FF0000; }
+.borda-amarela { border-color: #FFC000; }
+.borda-verde { border-color: #00B050; }
+
+.lista-anotacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.anotacao-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.anotacao-numero {
+    background-color: #0066FF;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.anotacao-conteudo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.anotacao-titulo {
+    background-color: #F3F2F1;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.anotacao-texto {
+    color: #888888;
+    font-size: 10px;
+    margin: 0;
+    padding: 0 16px;
+    line-height: 1.4;
+}
+
+.grafico-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.stat-titulo {
+    font-size: 12px;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.stat-caixa {
+    background-color: #F3F2F1;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 64px;
+    height: 64px;
+    background-color: #0066FF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 40px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
+}
