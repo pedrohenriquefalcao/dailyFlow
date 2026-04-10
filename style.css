@@ -1,10 +1,35 @@
-/* style.css */
+/* css geral */
+
+@font-face {
+    font-family: 'Alexandria-Bold';
+    src: url('./assets/fontes/alexandria-bold.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alexandria-Regular';
+    src: url('./assets/fontes/alexandria-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alexandria';
+    src: url('./assets/fontes/alexandria-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     background-color: #F3F2F1;
     margin: 0;   
     padding: 0;
     display: flex; 
+    font-family: Alexandria-Regular; 
 }
 
 .barra-lateral {

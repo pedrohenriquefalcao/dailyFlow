@@ -1,0 +1,216 @@
+/* css da tela de login, flow 1 */
+
+body {
+    background-color: #F3F2F1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Alexandria-Regular, sans-serif;
+}
+
+.caixa-login {
+    width: 982px; 
+    height: 500px; 
+    background-color: #FFFFFF;
+    border-radius: 19px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    display: flex;
+    overflow: hidden;
+}
+
+.painel-esquerdo {
+    flex: 1;
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.formulario-conteudo {
+    max-width: 336px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: auto;
+}
+
+.painel-esquerdo h1 {
+    font-family: Alexandria-Regular, sans-serif;
+    font-size: 29px;
+    color: #1A1A1A;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+}
+
+.texto-boas-vindas {
+    font-family: Alexandria, sans-serif;
+    font-size: 13px;
+    color: #666666;
+    margin: 0 0 32px 0;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+}
+
+.grupo-campo label {
+    font-family: Alexandria-Regular, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+}
+
+.grupo-campo input {
+    font-family: Alexandria-Regular, sans-serif;
+    padding: 13px 16px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: #FFFFFF;
+}
+
+.grupo-campo input::placeholder {
+    font-family: Alexandria, sans-serif;
+    color: #A3A3A3;
+}
+
+.grupo-campo input:focus {
+    border-color: #0066FF;
+}
+
+.opcoes-acesso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.opcao-lembrar {
+    font-family: Alexandria, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #4D4D4D;
+    cursor: pointer;
+}
+
+.link-esqueci-senha {
+    font-family: Alexandria, sans-serif;
+    font-size: 11px;
+    color: #0000FF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-esqueci-senha:hover {
+    text-decoration: underline;
+}
+
+.botao-entrar {
+    font-family: Alexandria-Regular, sans-serif;
+    width: 100%;
+    padding: 14px;
+    background-color: #0066FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.botao-entrar:hover {
+    background-color: #0052CC;
+}
+
+.botao-google {
+    font-family: Alexandria-Regular, sans-serif;
+    width: 100%;
+    padding: 14px;
+    background-color: transparent;
+    color: #1A1A1A;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.botao-google:hover {
+    background-color: #F8F9FA;
+}
+
+.botao-google img {
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+}
+
+.painel-direito {
+    flex: 1;
+    background-color: #0066FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+    box-sizing: border-box;
+}
+
+.conteudo-azul {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.conteudo-azul h2 {
+    font-family: Alexandria-Regular, sans-serif;
+    font-size: 22px;
+    margin: 0 0 13px 0;
+}
+
+.conteudo-azul p {
+    font-family: Alexandria, sans-serif;
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0 0 32px 0;
+}
+
+.ilustracao-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.botao-comecar {
+    font-family: Alexandria-Regular, sans-serif;
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 12px 70px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.botao-comecar:hover {
+    background-color: #FFFFFF;
+    color: #0066FF;
+}

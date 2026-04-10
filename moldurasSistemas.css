@@ -1,9 +1,11 @@
+/* css da tela inicial, componentes dos sistemas */
+
 .conteudo-principal {
-    margin-left: 60px; /* Respeita o tamanho da barra lateral */
-    width: calc(100% - 60px); /* Garante que preencha toda a tela restante */
+    margin-left: 60px;
+    width: calc(100% - 60px); 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* O segredo da responsividade */
-    align-items: start; /* Impede que colunas menores estiquem artificialmente */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    align-items: start; 
     gap: 40px;
     padding: 40px;
     box-sizing: border-box;
@@ -91,6 +93,7 @@
 }
 
 .data {
+    
     color: #000000;
     font-size: 14px;
     margin: 0 0 8px 0;
@@ -107,6 +110,7 @@
 }
 
 .cartao-evento p {
+    font-family: 'Alexandria', sans-serif;
     color: white;
     font-size: 14px;
     margin: 0;
@@ -134,6 +138,7 @@
 }
 
 .texto-tarefa {
+    font-family: 'Alexandria', sans-serif;
     flex-grow: 1;
     padding: 8px 12px;
     border-radius: 6px;
@@ -195,6 +200,7 @@
 }
 
 .anotacao-texto {
+    font-family: 'Alexandria', sans-serif;
     color: #888888;
     font-size: 10px;
     margin: 0;
@@ -220,6 +226,7 @@
 }
 
 .stat-caixa {
+    font-family: 'Alexandria', sans-serif;
     background-color: #F3F2F1;
     padding: 16px;
     border-radius: 12px;
