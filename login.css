@@ -37,11 +37,11 @@ body {
 }
 
 .painel-esquerdo h1 {
-    font-family: Alexandria-Regular, sans-serif;
-    font-size: 29px;
+    font-family: Alexandria-Bold, sans-serif;
+    font-size: 26px;
     color: #1A1A1A;
     margin: 0 0 6px 0;
-    font-weight: 700;
+    font-weight: 10;
 }
 
 .texto-boas-vindas {
@@ -178,8 +178,8 @@ body {
 }
 
 .conteudo-azul h2 {
-    font-family: Alexandria-Regular, sans-serif;
-    font-size: 22px;
+    font-family: Alexandria-Bold, sans-serif;
+    font-size: 24px;
     margin: 0 0 13px 0;
 }
 
