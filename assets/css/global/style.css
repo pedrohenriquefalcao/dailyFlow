@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Alexandria-Bold';
-    src: url('./assets/fontes/alexandria-bold.woff2') format('woff2');
+    src: url('./fonts/alexandria-bold.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Alexandria-Regular';
-    src: url('./assets/fontes/alexandria-regular.woff2') format('woff2');
+    src: url('./fonts/alexandria-regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'Alexandria';
-    src: url('./assets/fontes/alexandria-light.woff2') format('woff2');
+    src: url('./fonts/alexandria-light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -81,4 +81,27 @@ body {
 .barra-lateral a:hover {
     background-color: rgba(255, 255, 255, 0.15);
     cursor: pointer;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 64px;
+    height: 64px;
+    background-color: #0066FF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;      
+    padding-bottom: 4px; 
+    
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
 }

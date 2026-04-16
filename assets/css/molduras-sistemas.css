@@ -234,22 +234,3 @@
     color: #333333;
     line-height: 1.5;
 }
-
-.botao-flutuante {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 64px;
-    height: 64px;
-    background-color: #0066FF;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 40px;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
-}
