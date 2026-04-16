@@ -1,0 +1,73 @@
+body {
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+
+.layout-app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.conteudo-principal {
+    flex: 1;
+    width: 100%;
+    padding: 80px 80px 40px 85px; 
+    background-color: #F3F2F1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-leitura {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.titulo-leitura {
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 32px;
+    color: #000000;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.botao-opcoes {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.botao-opcoes img {
+    width: 32px;
+    height: auto;
+    color: #0066FF;
+}
+
+.botao-opcoes:hover {
+    opacity: 0.7;
+}
+
+.corpo-leitura {
+    width: 100%;
+}
+
+.corpo-leitura p {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 16px;
+    color: #2b2a2a;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: left;
+}
