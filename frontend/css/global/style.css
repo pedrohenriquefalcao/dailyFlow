@@ -193,11 +193,11 @@ MODAL DO BOTÃO +
 }
 
 .titulo-modal {
-    font-family: 'Alexandria-Bold', sans-serif;
-    font-size: 24px;
+    font-family: 'Alexandria-Regular', sans-serif;
+    font-size: 20px;
     color: #000000;
     text-align: center;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 32px;
 }
 
@@ -220,7 +220,7 @@ MODAL DO BOTÃO +
 }
 
 .grupo-input label {
-    font-family: 'Alexandria-Bold', sans-serif;
+    font-family: 'Alexandria-Regular', sans-serif;
     font-size: 13px;
     color: #000000;
 }

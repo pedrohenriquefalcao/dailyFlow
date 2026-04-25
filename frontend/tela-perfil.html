@@ -43,25 +43,25 @@
                 <form class="formulario-perfil">
                     <div class="grupo-input">
                         <label>Usuário</label>
-                        <input type="text" value="Zé" readonly>
+                        <input type="text" id="input-perfil-usuario" readonly>
                     </div>
                     
                     <div class="grupo-input">
                         <label>Nome</label>
-                        <input type="text" value="José Oliveira Gomes Dos Santos" readonly>
+                        <input type="text" id="input-perfil-nome" readonly>
                     </div>
                     
                     <div class="grupo-input">
                         <label>Email</label>
-                        <input type="email" value="josezito03200sucesso@gmail.com" readonly>
+                        <input type="email" id="input-perfil-email" readonly>
                     </div>
                     
                     <div class="grupo-input">
                         <label>Senha</label>
                         <div class="input-com-icone">
-                            <input type="password" value="123sucessojoze222" readonly>
-                            <button type="button" class="botao-mostrar-senha">
-                                <img src="./assets/icons/olho-esconde-senha.svg" alt="Mostrar/Ocultar Senha">
+                            <input type="password" id="input-perfil-senha" readonly>
+                            <button type="button" id="botao-toggle-senha" class="botao-mostrar-senha">
+                                <img id="icone-senha" src="./assets/icons/olho-esconde-senha.svg" alt="Mostrar/Ocultar Senha">
                             </button>
                         </div>
                     </div>
@@ -72,8 +72,8 @@
         </main>
     </div>
 
-
-
+    <script src="./js/global/script.js"></script>
+    <script src="./js/telas/tela-perfil.js"></script>
     
 </body>
 </html>
