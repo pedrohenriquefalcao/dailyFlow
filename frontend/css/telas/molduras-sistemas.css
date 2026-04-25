@@ -2,7 +2,7 @@
     margin-left: 60px;
     width: calc(100% - 60px); 
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr; 
+    grid-template-columns: 1.3fr 1.4fr 1fr; 
     align-items: start; 
     gap: 40px;
     padding: 40px 40px 40px 60px;     
@@ -228,6 +228,24 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.grafico-circular {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#0066FF 0deg, #F3F2F1 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+}
+
+.furo-central {
+    width: 168px;
+    height: 168px;
+    background-color: #FFFFFF; 
+    border-radius: 50%;
 }
 
 .borda-vermelha { border-color: #FF0000; }

@@ -115,3 +115,7 @@ body {
     -webkit-box-orient: vertical;
     word-break: break-word;
 }
+
+.esconder-elemento { display: none !important; }
+.mostrar-elemento-flex { display: flex !important; }
+.mostrar-elemento-block { display: block !important; }

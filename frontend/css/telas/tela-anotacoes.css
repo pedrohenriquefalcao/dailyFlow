@@ -38,7 +38,7 @@ body {
     border-radius: 12px;
 }
 
-.botao-adicionar {
+.botao-adicionar-pequeno {
     background-color: #0066FF;
     color: #FFFFFF;
     border: none;
@@ -53,7 +53,7 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.botao-adicionar:hover {
+.botao-adicionar-pequeno:hover {
     background-color: #0052CC;
 }
 
@@ -118,3 +118,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.fundo-azul { background-color: #0066FF !important; }
+.fundo-verde { background-color: #00B050 !important; }
+.fundo-vermelho { background-color: #FF0000 !important; }
+
+.esconder-elemento { display: none !important; }
+.mostrar-elemento-flex { display: flex !important; }
+.mostrar-elemento-block { display: block !important; }

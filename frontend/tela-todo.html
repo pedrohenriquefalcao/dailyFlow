@@ -37,24 +37,18 @@
                     <button class="botao-opcoes">
                         <img src="./assets/icons/menu-dots.svg" alt="Opções">
                     </button>
-            <button class="botao-adicionar-pequeno">
-                <img src="../frontend/assets/icons/botao-mais.svg" alt="Adicionar Tarefa">
-            </button>
+                    <button id="botao-abrir-modal" class="botao-adicionar-pequeno">
+                        <img src="../frontend/assets/icons/botao-mais.svg" alt="Adicionar Tarefa">
+                    </button>
                 </div>
             </header>
 
-            <section class="lista-todo">
-                <div class="item-todo">
-                    <div class="circulo-check"></div>
-                    <div class="caixa-texto-todo">Exemplo de tarefa na lista.</div>
-                    <div class="bolinha-status"></div>
-                </div>
-            </section>
+            <section id="container-lista-todo" class="lista-todo"></section>
             
         </main>
     </div>
 
-<div id="fundo-modal" class="fundo-modal">
+<div id="fundo-modal" class="fundo-modal esconder-elemento">
     <div class="modal-conteudo">
         
         <button id="fechar-modal" class="botao-fechar">
@@ -74,14 +68,14 @@
                 </select>
             </div>
 
-            <div id="campos-todo" class="campos-dinamicos">
+            <div id="campos-todo" class="campos-dinamicos esconder-elemento">
                 <div class="grupo-input">
                     <label>Título</label>
-                    <input type="text" class="input-modal" placeholder="Insira um título">
+                    <input type="text" id="input-todo-titulo" class="input-modal" placeholder="Insira um título">
                 </div>
                 <div class="grupo-input">
                     <label>Prioridade</label>
-                    <select class="input-modal">
+                    <select id="input-todo-prioridade" class="input-modal">
                         <option value="" selected disabled>Escolha uma prioridade</option>
                         <option value="baixa">Baixa</option>
                         <option value="media">Média</option>
@@ -90,33 +84,37 @@
                 </div>
                 <div class="grupo-input">
                     <label>Data de entrega</label>
-                    <input type="date" class="input-modal">
+                    <input type="date" id="input-todo-data" class="input-modal">
                 </div>
             </div>
 
-            <div id="campos-calendario" class="campos-dinamicos">
+            <div id="campos-calendario" class="campos-dinamicos esconder-elemento">
                 <div class="grupo-input">
                     <label>Título</label>
-                    <input type="text" class="input-modal" placeholder="Insira um título">
+                    <input type="text" id="input-calendario-titulo" class="input-modal" placeholder="Insira um título">
                 </div>
                 <div class="grupo-input">
                     <label>Data</label>
-                    <input type="date" class="input-modal">
+                    <input type="date" id="input-calendario-data" class="input-modal">
                 </div>
                 <div class="grupo-input">
                     <label>Horário</label>
-                    <input type="time" class="input-modal">
+                    <input type="time" id="input-calendario-horario" class="input-modal">
                 </div>
                 <div class="grupo-input">
                     <label>Local</label>
-                    <input type="text" class="input-modal" placeholder="Insira um local">
+                    <input type="text" id="input-calendario-local" class="input-modal" placeholder="Insira um local">
                 </div>
             </div>
 
-            <div id="campos-anotacoes" class="campos-dinamicos">
+            <div id="campos-anotacoes" class="campos-dinamicos esconder-elemento">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" id="input-anotacao-titulo" class="input-modal" placeholder="Título da anotação">
+                </div>
                 <div class="grupo-input">
                     <label>Cor</label>
-                    <select class="input-modal">
+                    <select id="input-anotacao-cor" class="input-modal">
                         <option value="" selected disabled>Escolha uma cor</option>
                         <option value="azul">Azul</option>
                         <option value="verde">Verde</option>
@@ -125,13 +123,13 @@
                 </div>
             </div>
 
-            <button id="botao-criar-tarefa" class="botao-criar">CRIAR</button>
+            <button id="botao-criar-tarefa" class="botao-criar esconder-elemento">CRIAR</button>
         </div>
     </div>
 </div>
 
 <script src="./js/global/script.js"></script>
+<script src="./js/telas/tela-todo.js"></script>
 
 </body>
 </html>
-
