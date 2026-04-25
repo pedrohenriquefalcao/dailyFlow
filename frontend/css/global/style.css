@@ -320,6 +320,18 @@ select.input-modal {
     background-color: #0052CC;
 }
 
+.esconder-elemento {
+    display: none !important;
+}
+
+.mostrar-elemento-flex {
+    display: flex !important;
+}
+
+.mostrar-elemento-block {
+    display: block !important;
+}
+
 /* 
 CORES DE PRIORIDADES
 ALTA ; VERMELHA

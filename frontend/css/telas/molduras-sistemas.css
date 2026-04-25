@@ -2,10 +2,10 @@
     margin-left: 60px;
     width: calc(100% - 60px); 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    grid-template-columns: 1fr 1.2fr 1fr; 
     align-items: start; 
     gap: 40px;
-    padding: 40px;
+    padding: 40px 40px 40px 60px;     
     box-sizing: border-box;
     height: 100vh;
     overflow-y: auto;
@@ -67,7 +67,7 @@
 .cartao-evento, .texto-tarefa, .anotacao-titulo {
     height: 50px;
     padding: 0 16px;
-    border-radius: 12px;
+    border-radius: 18px;
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
@@ -87,6 +87,7 @@
     width: 100%;
     display: block;
     margin: 0;
+    text-align: left;
 }
 
 .lista-eventos {
@@ -108,7 +109,7 @@
 .data {
     color: #000000;
     font-size: 12px; 
-    margin: 0 0 4px 0; 
+    margin: 0 0 4px 8px; 
     align-self: flex-start;
 }
 
@@ -150,7 +151,7 @@
 .lista-anotacoes {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 42px; 
     width: 100%;
 }
 
@@ -192,6 +193,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: left;
 }
 
 .grafico-container {
@@ -228,8 +230,10 @@
     text-overflow: ellipsis;
 }
 
-/* resolver depois (mudar para global) */
-
 .borda-vermelha { border-color: #FF0000; }
 .borda-amarela { border-color: #FFC000; }
 .borda-verde { border-color: #00B050; }
+
+.esconder-elemento { display: none !important; }
+.mostrar-elemento-flex { display: flex !important; }
+.mostrar-elemento-block { display: block !important; }
