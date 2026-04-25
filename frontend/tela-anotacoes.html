@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global/style.css">
+    <link rel="stylesheet" href="./css/telas/tela-anotacoes.css">
+    <title>Anotações - DailyFlow</title>
+</head>
+<body>
+    <div class="layout-app">
+
+        <aside class="barra-lateral">
+            <div class="menu-topo">
+                <a href="#"><img src="./assets/icons/menu-burger.svg" alt="Menu"></a>
+            </div>
+            <div class="icones-centrais">
+                <a href="#"><img src="./assets/icons/home.svg" alt="Início"></a>
+                <a href="#"><img src="./assets/icons/usuario.svg" alt="Perfil"></a>
+                <a href="#"><img src="./assets/icons/lua.svg" alt="Alternar Tema"></a>
+            </div>
+            <div class="config-baixo">
+                <a href="#"><img src="./assets/icons/engrenagem.svg" alt="Configurações"></a>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+            <header class="cabecalho-anotacoes">
+                <div class="rotulo-titulo">Anotações</div>
+            <button class="botao-adicionar-pequeno">
+                <img src="../frontend/assets/icons/botao-mais.svg" alt="Adicionar Tarefa">
+            </button>
+            </header>
+
+            <section class="lista-anotacoes">
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">17</div>
+                    <div class="titulo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">21</div>
+                    <div class="titulo-anotacao">Projeto em Grupo</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">22</div>
+                    <div class="titulo-anotacao">Roteiro - Chapada Diamantina</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">24</div>
+                    <div class="titulo-anotacao">Suprimentos de Junho</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">26</div>
+                    <div class="titulo-anotacao">Referências de Dark Mode</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+
+                <div class="cartao-anotacao">
+                    <div class="circulo-data">31</div>
+                    <div class="titulo-anotacao">Onde posso conseguir alguns?</div>
+                    <div class="resumo-anotacao">Maçã, Ovo, Pêra, Feijão, Arroz, Comprar fralda, macarrão, molho de tomate, sabão em pó, amaciante, detergente e papel toalha para o mês de Junho.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+<div id="fundo-modal" class="fundo-modal">
+    <div class="modal-conteudo">
+        
+        <button id="fechar-modal" class="botao-fechar">
+            <img src="./assets/icons/x-fechar.svg" alt="Fechar">
+        </button>
+
+        <h2 class="titulo-modal">Adicionando nova tarefa</h2>
+
+        <div class="formulario-modal">
+            <div class="grupo-input">
+                <label>Categoria</label>
+                <select id="seletor-categoria" class="input-modal">
+                    <option value="inicial" selected disabled>Selecione</option>
+                    <option value="todo">To-do</option>
+                    <option value="calendario">Calendário</option>
+                    <option value="anotacoes">Anotações</option>
+                </select>
+            </div>
+
+            <div id="campos-todo" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Prioridade</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma prioridade</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+                    <label>Data de entrega</label>
+                    <input type="date" class="input-modal">
+                </div>
+            </div>
+
+            <div id="campos-calendario" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Data</label>
+                    <input type="date" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Horário</label>
+                    <input type="time" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Local</label>
+                    <input type="text" class="input-modal" placeholder="Insira um local">
+                </div>
+            </div>
+
+            <div id="campos-anotacoes" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Cor</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma cor</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="botao-criar-tarefa" class="botao-criar">CRIAR</button>
+        </div>
+    </div>
+</div>
+
+<script src="./js/global/script.js"></script>
+
+
+</body>
+</html>

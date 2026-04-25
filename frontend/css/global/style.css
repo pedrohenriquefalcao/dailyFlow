@@ -1,0 +1,330 @@
+/* css geral */
+
+@font-face {
+    font-family: 'Alexandria-Bold';
+    src: url('../../assets/fonts/alexandria-bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alexandria-Regular';
+    src: url('../../assets/fonts/alexandria-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alexandria';
+    src: url('../../assets/fonts/alexandria-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #F3F2F1;
+    margin: 0;   
+    padding: 0;
+    display: flex; 
+    font-family: Alexandria-Regular; 
+}
+
+.barra-lateral {
+    background-color: #0066FF;
+    width: 60px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.menu-topo {
+    margin-bottom: 45px;
+}
+
+.icones-centrais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.config-baixo {
+    margin-top: auto;
+}
+
+.barra-lateral a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.barra-lateral img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.barra-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+}
+
+.botao-flutuante-adicionar {
+    position: fixed;
+    bottom: 40px;
+    right: 45px;
+    width: 64px;
+    height: 64px;
+    background-color: #0066FF;
+    border: none;
+    border-radius: 16px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+.botao-flutuante-adicionar img {
+    width: 30px;
+    height: 30px;
+}
+
+.botao-flutuante-adicionar:hover {
+    background-color: #0052CC;
+    transform: scale(1.05);
+}
+
+.botao-adicionar-pequeno {
+    background-color: #0066FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.botao-adicionar-pequeno img {
+    width: 20px;
+    height: 20px;
+}
+
+.botao-adicionar-pequeno:hover {
+    background-color: #0052CC;
+}
+
+
+/* 
+
+
+MODAL DO BOTÃO +
+
+
+*/
+
+
+.fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(30, 30, 30, 0.8);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: #F3F2F1;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.botao-fechar {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    padding: 0;
+}
+
+.botao-fechar img {
+    width: 20px;
+    height: auto;
+}
+
+.botao-fechar:hover {
+    opacity: 0.6;
+}
+
+.titulo-modal {
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.formulario-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campos-dinamicos {
+    display: none; 
+    flex-direction: column; 
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+}
+
+.grupo-input label {
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 13px;
+    color: #000000;
+}
+
+.input-modal {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #757575;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'Alexandria-Regular', sans-serif;
+    font-size: 14px;
+    color: #888888;
+    box-sizing: border-box;
+    outline: none;
+    appearance: none;
+}
+
+select.input-modal {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23888888%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+.input-modal:focus {
+    border-color: #0066FF;
+}
+
+.input-com-icone-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFFFFF;
+    border: 1px solid #757575;
+    border-radius: 8px;
+    padding: 14px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    cursor: text; 
+    position: relative;
+    overflow: hidden;
+}
+
+.input-com-icone-esquerda:focus-within {
+    border-color: #0066FF;
+}
+
+.icone-decorativo {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    opacity: 0.6; 
+}
+
+.input-modal-nativo {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'Alexandria-Regular', sans-serif;
+    font-size: 14px;
+    color: #888888;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.input-modal-nativo::-webkit-calendar-picker-indicator {
+    opacity: 0; 
+    position: absolute; 
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.botao-criar {
+    background-color: #0066FF;
+    color: #FFFFFF;
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: none; 
+    margin-top: 16px;
+}
+
+.botao-criar:hover {
+    background-color: #0052CC;
+}
+
+/* 
+CORES DE PRIORIDADES
+ALTA ; VERMELHA
+AMARELA ; MÉDIA
+BAIXA ; VERDE
+ */
+
+

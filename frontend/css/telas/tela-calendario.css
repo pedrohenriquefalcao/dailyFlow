@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.layout-app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.conteudo-principal {
+    flex: 1;
+    width: 100%;
+    padding: 40px 80px 40px 85px;
+    background-color: #F3F2F1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+}
+
+.rotulo-titulo {
+    background-color: #0066FF;
+    color: #FFFFFF;
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 20px;
+    padding: 12px 32px;
+    border-radius: 12px;
+}
+
+.calendario-container {
+    width: 100%;
+    flex: 1;
+    min-height: 600px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #0066FF;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 12px 0;
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 14px;
+}
+
+.grid-dias {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.celula-dia {
+    border-right: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+}
+
+.celula-dia:nth-child(7n) {
+    border-right: none;
+}
+
+.celula-dia:nth-last-child(-n+7) {
+    border-bottom: none;
+}
+
+.numero-dia {
+    text-align: center;
+    font-family: 'Alexandria-Bold', sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.numero-dia.inativo {
+    color: #B0B0B0;
+}
+
+.evento-etiqueta {
+    background-color: #0066FF;
+    color: #FFFFFF;
+    font-family: 'Alexandria-Regular', sans-serif;
+    font-size: 9px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    line-height: 1.3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}

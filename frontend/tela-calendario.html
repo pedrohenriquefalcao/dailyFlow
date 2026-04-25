@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global/style.css">
+    <link rel="stylesheet" href="./css/telas/tela-calendario.css">
+    <title>Calendário - DailyFlow</title>
+</head>
+<body>
+    <div class="layout-app">
+        
+        <aside class="barra-lateral">
+            <div class="menu-topo">
+                <a href="#"><img src="./assets/icons/menu-burger.svg" alt="Menu"></a>
+            </div>
+            <div class="icones-centrais">
+                <a href="#"><img src="./assets/icons/home.svg" alt="Início"></a>
+                <a href="#"><img src="./assets/icons/usuario.svg" alt="Perfil"></a>
+                <a href="#"><img src="./assets/icons/lua.svg" alt="Alternar Tema"></a>
+            </div>
+            <div class="config-baixo">
+                <a href="#"><img src="./assets/icons/engrenagem.svg" alt="Configurações"></a>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+            
+            <header class="cabecalho-calendario">
+                <div class="rotulo-titulo">Calendário</div>
+            <button class="botao-adicionar-pequeno">
+                <img src="../frontend/assets/icons/botao-mais.svg" alt="Adicionar Tarefa">
+            </button>
+            </header>
+
+            <section class="calendario-container">
+                <div class="dias-semana">
+                    <div>DOM.</div>
+                    <div>SEG.</div>
+                    <div>TER.</div>
+                    <div>QUA.</div>
+                    <div>QUI.</div>
+                    <div>SEX.</div>
+                    <div>SAB.</div>
+                </div>
+                
+                <div class="grid-dias">
+                    <div class="celula-dia"><span class="numero-dia">1</span></div>
+                    <div class="celula-dia"><span class="numero-dia">2</span></div>
+                    <div class="celula-dia"><span class="numero-dia">3</span></div>
+                    <div class="celula-dia"><span class="numero-dia">4</span></div>
+                    <div class="celula-dia"><span class="numero-dia">5</span></div>
+                    <div class="celula-dia"><span class="numero-dia">6</span></div>
+                    <div class="celula-dia"><span class="numero-dia">7</span></div>
+
+                    <div class="celula-dia"><span class="numero-dia">8</span></div>
+                    <div class="celula-dia"><span class="numero-dia">9</span></div>
+                    <div class="celula-dia"><span class="numero-dia">10</span></div>
+                    <div class="celula-dia"><span class="numero-dia">11</span></div>
+                    <div class="celula-dia"><span class="numero-dia">12</span></div>
+                    <div class="celula-dia"><span class="numero-dia">13</span></div>
+                    <div class="celula-dia"><span class="numero-dia">14</span></div>
+
+                    <div class="celula-dia"><span class="numero-dia">15</span></div>
+                    <div class="celula-dia"><span class="numero-dia">16</span></div>
+                    <div class="celula-dia"><span class="numero-dia">17</span></div>
+                    <div class="celula-dia"><span class="numero-dia">18</span></div>
+                    <div class="celula-dia"><span class="numero-dia">19</span></div>
+                    <div class="celula-dia"><span class="numero-dia">20</span></div>
+                    <div class="celula-dia">
+                        <span class="numero-dia">21</span>
+                        <div class="evento-etiqueta">Lorem Ipsum is simply dummy text of the printing and</div>
+                    </div>
+
+                    <div class="celula-dia"><span class="numero-dia">22</span></div>
+                    <div class="celula-dia">
+                        <span class="numero-dia">23</span>
+                        <div class="evento-etiqueta">Dentista</div>
+                    </div>
+                    <div class="celula-dia"><span class="numero-dia">24</span></div>
+                    <div class="celula-dia"><span class="numero-dia">25</span></div>
+                    <div class="celula-dia"><span class="numero-dia">26</span></div>
+                    <div class="celula-dia"><span class="numero-dia">27</span></div>
+                    <div class="celula-dia"><span class="numero-dia">28</span></div>
+
+                    <div class="celula-dia"><span class="numero-dia">29</span></div>
+                    <div class="celula-dia">
+                        <span class="numero-dia">30</span>
+                        <div class="evento-etiqueta">Atividade I Unidade: Apresentar projeto de Daniele</div>
+                    </div>
+                    <div class="celula-dia"><span class="numero-dia">31</span></div>
+                    <div class="celula-dia"><span class="numero-dia inativo">1</span></div>
+                    <div class="celula-dia"><span class="numero-dia inativo">2</span></div>
+                    <div class="celula-dia"><span class="numero-dia inativo">3</span></div>
+                    <div class="celula-dia"><span class="numero-dia inativo">4</span></div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+<div id="fundo-modal" class="fundo-modal">
+    <div class="modal-conteudo">
+        
+        <button id="fechar-modal" class="botao-fechar">
+            <img src="./assets/icons/x-fechar.svg" alt="Fechar">
+        </button>
+
+        <h2 class="titulo-modal">Adicionando nova tarefa</h2>
+
+        <div class="formulario-modal">
+            <div class="grupo-input">
+                <label>Categoria</label>
+                <select id="seletor-categoria" class="input-modal">
+                    <option value="inicial" selected disabled>Selecione</option>
+                    <option value="todo">To-do</option>
+                    <option value="calendario">Calendário</option>
+                    <option value="anotacoes">Anotações</option>
+                </select>
+            </div>
+
+            <div id="campos-todo" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Prioridade</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma prioridade</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+                    <label>Data de entrega</label>
+                    <input type="date" class="input-modal">
+                </div>
+            </div>
+
+            <div id="campos-calendario" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Data</label>
+                    <input type="date" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Horário</label>
+                    <input type="time" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Local</label>
+                    <input type="text" class="input-modal" placeholder="Insira um local">
+                </div>
+            </div>
+
+            <div id="campos-anotacoes" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Cor</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma cor</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="botao-criar-tarefa" class="botao-criar">CRIAR</button>
+        </div>
+    </div>
+</div>
+
+<script src="./js/global/script.js"></script>
+
+
+</body>
+</html>

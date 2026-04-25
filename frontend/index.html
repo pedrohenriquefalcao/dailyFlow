@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global/style.css">
+    <link rel="stylesheet" href="./css/telas/molduras-sistemas.css">
+    <title>Início - DailyFlow</title>
+</head>
+<body>
+    <div class="layout-app">
+        <aside class="barra-lateral">
+            <div class="menu-topo">
+                <a href="#"><img src="./assets/icons/menu-burger.svg" alt="Menu"></a>
+            </div>
+            <div class="icones-centrais">
+                <a href="#"><img src="./assets/icons/home.svg" alt="Início"></a>
+                <a href="#"><img src="./assets/icons/usuario.svg" alt="Perfil"></a>
+                <a href="#"><img src="./assets/icons/lua.svg" alt="Alternar Tema"></a>
+            </div>
+            <div class="config-baixo">
+                <a href="#"><img src="./assets/icons/engrenagem.svg" alt="Configurações"></a>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+            
+            <div class="coluna">
+                <div class="calendario-moldura">
+                    <h1>Calendário</h1>
+                    <div class="lista-eventos"></div>
+                </div>
+
+                <div class="todo-moldura">
+                    <h1>Lista To-Do</h1>
+                    <div class="lista-tarefas"></div>
+                </div>
+            </div>
+
+            <div class="coluna">
+                <div class="anotacoes-moldura">
+                    <h1>Anotações</h1>
+                    <div class="lista-anotacoes"></div>
+                </div>
+            </div>
+
+            <div class="coluna">
+                <div class="estatisticas-moldura">
+                    <div class="grafico-container">
+                        <svg width="240" height="240" viewBox="0 0 240 240">
+                            <circle cx="120" cy="120" r="100" fill="none" stroke="#F0F0F0" stroke-width="16"/>
+                            <line x1="120" y1="20" x2="120" y2="120" stroke="#F0F0F0" stroke-width="16"/>
+                            <line x1="120" y1="120" x2="190" y2="190" stroke="#F0F0F0" stroke-width="16"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <p class="stat-titulo">Eventos</p>
+                        <div class="stat-caixa">
+                            Você teve 13 eventos esse mês, 03 eventos a mais do que o mês passado! Aumento de 0,39%
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <p class="stat-titulo">Anotações</p>
+                        <div class="stat-caixa">
+                            Você teve 40 anotações esse mês, 03 anotações a mais do que o mês passado! Aumento de 0,39%
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <p class="stat-titulo">To-do</p>
+                        <div class="stat-caixa">
+                            Você teve 40 afazeres esse mês, 03 afazeres a mais do que o mês passado! Aumento de 0,39%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="botao-flutuante-adicionar">
+                <img src="../frontend/assets/icons/botao-mais.svg" alt="Adicionar Tarefa">
+            </button>
+
+        </main>
+    </div>
+
+<div id="fundo-modal" class="fundo-modal">
+    <div class="modal-conteudo">
+        
+        <button id="fechar-modal" class="botao-fechar">
+            <img src="./assets/icons/x-fechar.svg" alt="Fechar">
+        </button>
+
+        <h2 class="titulo-modal">Adicionando nova tarefa</h2>
+
+        <div class="formulario-modal">
+            <div class="grupo-input">
+                <label>Categoria</label>
+                <select id="seletor-categoria" class="input-modal">
+                    <option value="inicial" selected disabled>Selecione</option>
+                    <option value="todo">To-do</option>
+                    <option value="calendario">Calendário</option>
+                    <option value="anotacoes">Anotações</option>
+                </select>
+            </div>
+
+            <div id="campos-todo" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Prioridade</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma prioridade</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+                    <label>Data de entrega</label>
+                    <input type="date" class="input-modal">
+                </div>
+            </div>
+
+            <div id="campos-calendario" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Título</label>
+                    <input type="text" class="input-modal" placeholder="Insira um título">
+                </div>
+                <div class="grupo-input">
+                    <label>Data</label>
+                    <input type="date" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Horário</label>
+                    <input type="time" class="input-modal">
+                </div>
+                <div class="grupo-input">
+                    <label>Local</label>
+                    <input type="text" class="input-modal" placeholder="Insira um local">
+                </div>
+            </div>
+
+            <div id="campos-anotacoes" class="campos-dinamicos">
+                <div class="grupo-input">
+                    <label>Cor</label>
+                    <select class="input-modal">
+                        <option value="" selected disabled>Escolha uma cor</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="botao-criar-tarefa" class="botao-criar">CRIAR</button>
+        </div>
+    </div>
+</div>
+
+    <script src="./js/global/script.js"></script>
+    <script src="./js/telas/index.js"></script>
+    
+</body>
+</html>
