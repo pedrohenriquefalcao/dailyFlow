@@ -143,6 +143,48 @@ body {
     font-family: 'Alexandria-Regular', sans-serif;
     font-size: 15px;
     color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-tarefa {
+    flex: 1;
+}
+
+.grupo-icones-interacao {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icones-ocultos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.botao-interacao {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.botao-interacao:hover {
+    opacity: 1;
+}
+
+.botao-interacao img {
+    height: 18px;
+    width: auto;
 }
 
 .bolinha-status {
@@ -153,30 +195,6 @@ body {
     border-radius: 50%;
     flex-shrink: 0;
 }
-
-.botao-opcoes {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.2s ease;
-}
-
-.botao-opcoes img {
-    width: 32px;
-    height: auto;
-    color: #0066FF;
-}
-
-.botao-opcoes:hover {
-    opacity: 0.7;
-}
-
-/* IDS
-PARA O JS */
 
 .caixa-prioridade-baixa { border-color: #00B050 !important; }
 .bolinha-prioridade-baixa { background-color: #00B050 !important; }

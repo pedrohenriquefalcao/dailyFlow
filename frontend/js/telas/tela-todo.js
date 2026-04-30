@@ -91,12 +91,44 @@ document.addEventListener("DOMContentLoaded", () => {
             container.innerHTML += `
                 <div class="item-todo">
                     <div class="circulo-check"></div>
-                    <div class="caixa-texto-todo ${classeCaixa}">${tarefa.titulo}</div>
+                    <div class="caixa-texto-todo ${classeCaixa}">
+                        <span class="texto-tarefa">${tarefa.titulo}</span>
+                        <div class="grupo-icones-interacao">
+                            <div class="icones-ocultos esconder-elemento">
+                                <button class="botao-interacao botao-editar">
+                                    <img src="./assets/icons/lapis-editar.svg" alt="Editar">
+                                </button>
+                                <button class="botao-interacao botao-excluir">
+                                    <img src="./assets/icons/lixeira.svg" alt="Excluir">
+                                </button>
+                            </div>
+                            <button class="botao-interacao botao-tres-pontos">
+                                <img src="./assets/icons/menu-dots.svg" alt="Opções">
+                            </button>
+                        </div>
+                    </div>
                     <div class="bolinha-status ${classeBolinha}"></div>
                 </div>
             `;
         });
     }
+
+    document.getElementById('container-lista-todo').addEventListener('click', (evento) => {
+        const botaoTresPontos = evento.target.closest('.botao-tres-pontos');
+        
+        if (botaoTresPontos) {
+            const containerIconesOcultos = botaoTresPontos.previousElementSibling;
+            containerIconesOcultos.classList.toggle('esconder-elemento');
+            return;
+        }
+
+        const botaoExcluir = evento.target.closest('.botao-excluir');
+        
+        if (botaoExcluir) {
+            const itemTarefa = botaoExcluir.closest('.item-todo');
+            itemTarefa.remove();
+        }
+    });
 
     renderizarTarefas();
 
