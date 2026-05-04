@@ -58,14 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (categoria === 'anotacoes') {
             const titulo = document.getElementById('input-anotacao-titulo').value;
-            const resumo = document.getElementById('input-anotacao-resumo').value;
             const cor = document.getElementById('input-anotacao-cor').value;
             
-            if(!titulo || !resumo) return alert("Preencha o título e o resumo!");
+            if(!titulo) return alert("Preencha o título!");
 
             const diaAtual = new Date().getDate();
 
-            dbAnotacoes.push({ id: diaAtual, titulo, resumo, cor });
+            dbAnotacoes.push({ id: diaAtual, titulo, cor });
             renderizarAnotacoes();
         } 
         
@@ -90,11 +89,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="cartao-anotacao">
                     <div class="circulo-data ${classeCor}">${nota.id}</div>
                     <div class="titulo-anotacao">${nota.titulo}</div>
-                    <div class="resumo-anotacao">${nota.resumo}</div>
                 </div>
             `;
         });
     }
+
+    document.getElementById('container-lista-anotacoes').addEventListener('click', (evento) => {
+        const cartao = evento.target.closest('.cartao-anotacao');
+        
+        if (cartao) {
+            const titulo = cartao.querySelector('.titulo-anotacao').innerText;
+
+            const dadosNota = { titulo };
+
+            localStorage.setItem('notaClicada', JSON.stringify(dadosNota));
+
+            window.location.href = 'tela-anotacoes-expandida.html';
+        }
+    });
 
     renderizarAnotacoes();
 
