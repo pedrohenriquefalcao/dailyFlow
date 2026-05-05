@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/telas/tela-anotacoes.css">
     <title>Anotações - DailyFlow</title>
 </head>
+
 <body>
     <div class="layout-app">
 
@@ -36,87 +38,91 @@
         </main>
     </div>
 
-<div id="fundo-modal" class="fundo-modal esconder-elemento">
-    <div class="modal-conteudo">
-        
-        <button id="fechar-modal" class="botao-fechar">
-            <img src="./assets/icons/x-fechar.svg" alt="Fechar">
-        </button>
+    <div id="fundo-modal" class="fundo-modal esconder-elemento">
+        <div class="modal-conteudo">
 
-        <h2 class="titulo-modal">Adicionando novo registro</h2>
+            <button id="fechar-modal" class="botao-fechar">
+                <img src="./assets/icons/x-fechar.svg" alt="Fechar">
+            </button>
 
-        <div class="formulario-modal">
-            <div class="grupo-input">
-                <label>Categoria</label>
-                <select id="seletor-categoria" class="input-modal">
-                    <option value="inicial" selected disabled>Selecione</option>
-                    <option value="todo">To-do</option>
-                    <option value="calendario">Calendário</option>
-                    <option value="anotacoes">Anotações</option>
-                </select>
-            </div>
+            <h2 class="titulo-modal">Adicionar uma nova tarefa</h2>
 
-            <div id="campos-todo" class="campos-dinamicos esconder-elemento">
+            <div class="formulario-modal">
                 <div class="grupo-input">
-                    <label>Título</label>
-                    <input type="text" id="input-todo-titulo" class="input-modal" placeholder="Insira um título">
-                </div>
-                <div class="grupo-input">
-                    <label>Prioridade</label>
-                    <select id="input-todo-prioridade" class="input-modal">
-                        <option value="" selected disabled>Escolha uma prioridade</option>
-                        <option value="baixa">Baixa</option>
-                        <option value="media">Média</option>
-                        <option value="alta">Alta</option>
+                    <label>Onde quer adicionar?</label>
+                    <select id="seletor-categoria" class="input-modal">
+                        <option value="inicial" selected disabled>Selecione</option>
+                        <option value="todo">To-do</option>
+                        <option value="calendario">Calendário</option>
+                        <option value="anotacoes">Anotações</option>
                     </select>
                 </div>
-                <div class="grupo-input">
-                    <label>Data de entrega</label>
-                    <input type="date" id="input-todo-data" class="input-modal">
-                </div>
-            </div>
 
-            <div id="campos-calendario" class="campos-dinamicos esconder-elemento">
-                <div class="grupo-input">
-                    <label>Título</label>
-                    <input type="text" id="input-calendario-titulo" class="input-modal" placeholder="Insira um título">
+                <div id="campos-todo" class="campos-dinamicos esconder-elemento">
+                    <div class="grupo-input">
+                        <label>Título</label>
+                        <input type="text" id="input-todo-titulo" class="input-modal" placeholder="Insira um título">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Prioridade</label>
+                        <select id="input-todo-prioridade" class="input-modal">
+                            <option value="" selected disabled>Escolha uma prioridade</option>
+                            <option value="baixa">Baixa</option>
+                            <option value="media">Média</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label>Data de entrega</label>
+                        <input type="date" id="input-todo-data" class="input-modal">
+                    </div>
                 </div>
-                <div class="grupo-input">
-                    <label>Data</label>
-                    <input type="date" id="input-calendario-data" class="input-modal">
-                </div>
-                <div class="grupo-input">
-                    <label>Horário</label>
-                    <input type="time" id="input-calendario-horario" class="input-modal">
-                </div>
-                <div class="grupo-input">
-                    <label>Local</label>
-                    <input type="text" id="input-calendario-local" class="input-modal" placeholder="Insira um local">
-                </div>
-            </div>
 
-            <div id="campos-anotacoes" class="campos-dinamicos esconder-elemento">
-                <div class="grupo-input">
-                    <label>Título</label>
-                    <input type="text" id="input-anotacao-titulo" class="input-modal" placeholder="Título da anotação">
+                <div id="campos-calendario" class="campos-dinamicos esconder-elemento">
+                    <div class="grupo-input">
+                        <label>Título</label>
+                        <input type="text" id="input-calendario-titulo" class="input-modal"
+                            placeholder="Insira um título">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Data</label>
+                        <input type="date" id="input-calendario-data" class="input-modal">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Horário</label>
+                        <input type="time" id="input-calendario-horario" class="input-modal">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Local</label>
+                        <input type="text" id="input-calendario-local" class="input-modal"
+                            placeholder="Insira um local">
+                    </div>
                 </div>
-                <div class="grupo-input">
-                    <label>Cor</label>
-                    <select id="input-anotacao-cor" class="input-modal">
-                        <option value="azul" selected>Azul</option>
-                        <option value="verde">Verde</option>
-                        <option value="vermelho">Vermelho</option>
-                    </select>
-                </div>
-            </div>
 
-            <button id="botao-criar-tarefa" class="botao-criar esconder-elemento">CRIAR</button>
+                <div id="campos-anotacoes" class="campos-dinamicos esconder-elemento">
+                    <div class="grupo-input">
+                        <label>Título</label>
+                        <input type="text" id="input-anotacao-titulo" class="input-modal"
+                            placeholder="Título da anotação">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Cor</label>
+                        <select id="input-anotacao-cor" class="input-modal">
+                            <option value="azul" selected>Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="vermelho">Vermelho</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="botao-criar-tarefa" class="botao-criar esconder-elemento">CRIAR</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="./js/global/script.js"></script>
-<script src="./js/telas/tela-anotacoes.js"></script>
+    <script src="./js/global/script.js"></script>
+    <script src="./js/telas/tela-anotacoes.js"></script>
 
 </body>
+
 </html>
