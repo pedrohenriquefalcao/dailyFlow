@@ -27,8 +27,7 @@ const pool = new Pool({
 })
 
 
-
-//login
+//LOGIN
 app.post('/login', async (req, res) => {
 
 
@@ -50,15 +49,31 @@ app.post('/login', async (req, res) => {
     }
 })
 
-// Cadastro
+// CADASTRO
 app.post('/cadastro', async (req, res) => {
-    const { nome, sobrenome, email, password } = req.body;
+
 
 
     try {
+
+        const { nome, email, telefone,  senha, confirmarsenha} = req.body;
+        
+        
+        
         if (!nome || !sobrenome || !email || !password) {
             return res.status(400).json({ message: " Todos os campos são obrigatórios!" })
         }
+
+        if(senha != confirmarsenha){
+            return res.status(400).json({error:"As senhas não coincidem"})
+        }
+
+        const {rows} = await pool.query('SELECT * FROM  users WHERE email =$1', [email])
+        if (rows.length > 0){
+            return res.status(400).json({error: "E-mail já cadastrado"})
+        }
+
+        
 
         const queryText = 'Insert INTO users (nome, sobrenome, email, password) VALUES ($1, $2, $3, $4) RETURNING *'
         const values = [nome, sobrenome, email, password]
@@ -67,7 +82,7 @@ app.post('/cadastro', async (req, res) => {
 
         res.status(201).json({
             message: 'Olá ${nome}, sua conta foi criada com sucesso!',
-            user: newUser.rows[0]
+            user: rows[0]
         })
     } catch (err) {
         if (err.code === '23505') {
@@ -84,23 +99,23 @@ app.post('/cadastro', async (req, res) => {
 })
 
 
-app.post('/api/tarefas', async (req, res) => {
+// CRIAR TAREFAS NO TO-DO 
+app.post('/tarefas', async (req, res) => {
 
 
     try {
 
-        const { categoria, titulo, prioridade, data_entrega, horario, local_evento } = req.body
+        const { categoria, titulo, prioridade, data_entrega } = req.body
         const sql = `
-            INSERT INTO tarefas(categora, titulo, prioridade, data_entrega, horario, local_evento)
-            VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`
+            INSERT INTO tarefas(categora, titulo, prioridade, data_entrega)
+            VALUES ($1, $2, $3, $4) RETURNING *`
 
         const values = [
             categoria || 'todos',
             titulo,
             prioridade || 'baixa',
             data_entrega || null,
-            horario || null,
-            local_evento || null
+
         ]
 
         const { rows } = await pool.query(sql, values)
@@ -112,18 +127,14 @@ app.post('/api/tarefas', async (req, res) => {
     }
 })
 
-
-app.get('api/tarefas', async (req, res) => {
+//LISTAR TAREFAS NO TO-DO LIST
+app.get('/tarefas', async (req, res) => {
     try {
-        const { categoria, status, prioridade } = req.query
+        const { status, prioridade } = req.query
 
         let query = 'SELECT * FROM tarefas WHERE 1=1'
         let values = []
 
-        if (categoria) {
-            values.push(categoria)
-            query += `AND categoria = $${values.length}`
-        }
 
         if (status === 'pendentes') {
             query += 'AND concluida = false'
@@ -131,7 +142,7 @@ app.get('api/tarefas', async (req, res) => {
             query += 'AND concluida = true'
         }
 
-        if (prioridade && prioridade != 'Prioridade') {
+        if (prioridade) {
             values.push(prioridade)
             query += `AND prioridade = $${values.length}`
         }
@@ -149,7 +160,8 @@ app.get('api/tarefas', async (req, res) => {
 
 })
 
-app.patch('/api/tarefas/:id/toggle', async (req, res) => {
+//ALTERNAR CONCLUSÃO(Marca/ Desmarca o checkbox)
+app.patch('/tarefas/:id/toggle', async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -160,7 +172,7 @@ app.patch('/api/tarefas/:id/toggle', async (req, res) => {
     }
 })
 
-// Criar nova anotação
+// CRIAR NOVA ANOTAÇÃO
 app.post('/anotacoes', async (req, res) => {
     try {
         const { categoria, titulo, resumo, cor } = req.body
@@ -175,6 +187,7 @@ app.post('/anotacoes', async (req, res) => {
     }
 })
 
+//LISTAR ANOTAÇÕES
 app.get('/anotacoes', async (req, res) => {
     try {
         const { rows } = await pool.query("SELECT * FROM anotacoes ORDER BY id DESC");
@@ -183,6 +196,8 @@ app.get('/anotacoes', async (req, res) => {
         console.error(err.message);
     }
 });
+
+
 
 app.get('/anotacoes/:id', async (req, res) => {
     try {
@@ -194,6 +209,68 @@ app.get('/anotacoes/:id', async (req, res) => {
         res.json(anotacao.rows[0])
     } catch (err) {
         console.error(err.message);
+    }
+})
+
+
+//LISTAR  EVENTOS POR MÊS/DATA
+app.get('/evento', async (req, res) => {
+    try {
+        const { data } = req.query
+
+        let query = 'SELECT * FROM eventos_calendario'
+        let params = []
+
+        if (data) {
+            query += 'WHERE data_evento = $1'
+            params.push(data)
+        }
+
+        query += 'ORDER BY horario ASC'
+
+        const { rows } = await pool.query(query, params)
+        res.json(rows)
+
+
+
+    } catch (err) {
+        res.status(500).json({ erro: 'Erro ao buscar eventos do calendário' })
+
+    }
+})
+
+//CRIAR NOVO REGISTRO
+app.post('eventos', async (req, res) => {
+
+    try {
+        const { titulo, data, horario, local } = req.body
+
+        const sql = ` 
+            INSERT INTO eventos_calendario(titulo, data_evento, horario,local)
+            VALUES($1, $2, $3, $4) RETURNING *`
+
+        const {rows} = await pool.query(sql, [titulo, data, horario, local])
+        res.status(201).json(rows[0])
+    } catch(err){
+        console.error(err)
+        res.status(500).json({erro:'Erro ao agendar evento'})
+
+    }
+})
+
+app.get('/eventos/dia/:data', async (req,res) =>{
+    try{
+        const{data} = req.params
+        const {rows} = await pool.query(
+            'SELECT * FROM eventos_calendario WHERE data_evento = $1 ORDER BY horario ',
+            [data]
+        )
+        res.json(rows)
+
+
+    }catch(err){
+        res.status(500).json({erro: 'Erro ao carregar agenda do dia '})
+
     }
 })
 
