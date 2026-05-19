@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Alexandria-Regular';
+    src: url('./assets/fonts/Alexandria-Regular.ttf') format('truetype'); /* Ajuste se o nome do arquivo for diferente */
+}
+
+@font-face {
+    font-family: 'Alexandria-Bold';
+    src: url('./assets/fonts/Alexandria-Bold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alexandria-Regular', sans-serif;
+    background-color: #F3F2F1;
+    -webkit-font-smoothing: antialiased;
+}
