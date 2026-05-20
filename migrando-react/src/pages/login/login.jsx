@@ -4,7 +4,7 @@ import './Login.css';
 
 export default function Login() {
     return (
-        <div className="login-page-wrapper">
+        <div className="container-tela-login">
             <div className="caixa-login">
                 <div className="painel-esquerdo">
                     <div className="formulario-conteudo">

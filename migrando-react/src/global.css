@@ -1,12 +1,18 @@
 @font-face {
-    font-family: 'Alexandria-Regular';
-    src: url('./assets/fonts/Alexandria-Regular.ttf') format('truetype'); /* Ajuste se o nome do arquivo for diferente */
+    font-family: 'Alexandria-Bold';
+    src: url('/src/public/fonts/alexandria-bold.woff2') format('truetype');
 }
 
 @font-face {
-    font-family: 'Alexandria-Bold';
-    src: url('./assets/fonts/Alexandria-Bold.ttf') format('truetype');
+    font-family: 'Alexandria-Regular';
+    src: url('/src/public/fonts/alexandria-regular.woff2') format('truetype');
 }
+
+@font-face {
+    font-family: 'Alexandria-Light';
+    src: url('/src/public/fonts/alexandria-light.woff2') format('truetype');
+}
+
 
 * {
     margin: 0;

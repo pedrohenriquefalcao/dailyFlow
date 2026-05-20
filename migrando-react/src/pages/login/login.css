@@ -1,6 +1,6 @@
 /* css da tela de login, primeira tela do usuario */
 
-.login-page-wrapper {
+.container-tela-login {
     background-color: #F3F2F1;
     display: flex;
     justify-content: center;
